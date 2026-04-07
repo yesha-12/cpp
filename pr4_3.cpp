@@ -30,7 +30,7 @@ int main()
    
     int i=0,j=0;
      int *merge=new int[n+m];
-    while(k<n+m)
+    while(i<n&&j<m)
     {
         if (arr1[i]<=arr2[j])
         {
@@ -42,6 +42,13 @@ int main()
         merge[k++]=arr2[j++];
         }
 
+    }
+    while(j<m)
+    {
+        merge[k]=arr2[j];
+        k++;
+        j++;
+        
     }
     for(int i=0;i<k;i++)
     {
