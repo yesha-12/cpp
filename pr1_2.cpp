@@ -24,7 +24,7 @@ public:
        if(copies>0)
        {
            copies--;
-           cout<<"book issued";
+           cout<<"book issued"<<endl;
        }
        else
        {
@@ -35,18 +35,22 @@ public:
    void returnbook()
    {
        copies++;
-       cout<<"return book";
+       cout<<"return book"<<endl;
    }
    void display()
    {
-       cout<<id<<title<<author<<copies;
+       cout<<id<<" " <<title<< "  " <<author<< "  " <<copies;
    }
 };
 int main()
 {
    book b1(1,"c++","abc",5);
    b1.display();
-   b1.issubook();
+   cout<<endl;
+
    b1.returnbook();
+   b1.display();
+   cout<<endl;
+   cout<<"25cs032";
    return 0;
 }

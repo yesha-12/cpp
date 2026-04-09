@@ -1,62 +1,115 @@
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include <ctime>
+#include<iostream>
 using namespace std;
+class ATM
+{
+    private:
+    int pin;
+    int balance;
 
-// Function to shuffle word
-string scrambleWord(string word) {
-    string scrambled = word;
-    int n = word.length();
-
-    for (int i = 0; i < n; i++) {
-        int j = rand() % n;
-        char temp = scrambled[i];
-        scrambled[i] = scrambled[j];
-        scrambled[j] = temp;
+    public:
+    ATM()
+    {
+      pin=1234;
+      balance=5000;
     }
-    return scrambled;
-}
 
-int main() {
-    string words[] = {"code", "game", "computer", "logic", "program"};
-    int size = 5;
+    bool login()
+    {
+        int enterpin,attemps=0;
+        while(attemps<3){
+            cout<<"\nEnter pin:";
+            cin>>enterpin;
 
-    srand(time(0));
-
-    int score = 0;
-    char choice;
-
-    cout << "===== Word Scramble Game =====\n";
-
-    do {
-        // Select random word
-        string word = words[rand() % size];
-
-        // Scramble it
-        string scrambled = scrambleWord(word);
-
-        cout << "\nScrambled word: " << scrambled;
-        cout << "\nYour guess: ";
-
-        string guess;
-        cin >> guess;
-
-        if (guess == word) {
-            cout << "🎉 Correct!\n";
-            score++;
-        } else {
-            cout << "❌ Wrong! Correct word was: " << word << endl;
+            if (enterpin==pin){
+                cout<<"\nlogin succesfully!!";
+                return true;
+            }
+            else{
+                cout<<"\nwrong pin !!";
+                attemps++;
+            }
+         
         }
+        cout<<"\ncard block";
+            return false;
+    }
+    void checkbalance(){
+        cout<<"Balance:"<<balance<<endl;
+    }
 
-        cout << "Score: " << score << endl;
+    void deposit(){
+        int amount;
+        cout<<"\nEnter the deposit amount:";
+        cin>>amount;
 
-        cout << "\nPlay again? (y/n): ";
-        cin >> choice;
+        balance+=amount;
 
-    } while (choice == 'y' || choice == 'Y');
+        cout<<"\nAmount deposit!!";
 
-    cout << "\nFinal Score: " << score << endl;
+    }
+    void withdraw(){
+        int amount;
+        cout<<"Enter amount:";
+        cin>>amount;
+         if(amount<=balance&& balance-amount>=500){
+            balance-=amount;
+            cout<<"\nplz collect cash!!";
+         }
+         else{
+            cout<<"\nInsufficient balance or minimum balance required!";
+         }
+    }
+    void changepin(){
+        int oldpin,newpin;
+        cout<<"Enter oldpin:";
+        cin>>oldpin;
 
+        if(oldpin==pin){
+            cout<<"Enter newpin:";
+            cin>>newpin;
+            pin=newpin;
+
+            cout<<"\npin change succesfully!";
+
+        }
+        else{
+            cout<<"\nWrong pin";
+        }
+    }
+
+    void menu(){
+        int choice;
+
+        do{
+            cout<<"\n----ATM menu----\n";
+            cout<<"1.checkbalance()\n";
+            cout<<"2.deposit\n";
+            cout<<"3.withdraw\n";
+            cout<<"4.changepin\n";
+            cout<<"5.exit\n";
+
+            cout<<"Enter choice:\n";
+            cin>>choice;
+
+            switch(choice)
+            {
+                case 1:checkbalance();break;
+                case 2:deposit();break;
+                case 3:withdraw();break;
+                case 4:changepin();break;
+                case 5:cout<<"Thankyou for using ATM!!\n";break;   
+                default:cout<<"Invalid choice!!";
+            }
+        }while(choice!=5);
+    }
+
+};
+
+int main()
+{
+    ATM person1;
+    if(person1.login()){
+        person1.menu();
+    }
     return 0;
 }
