@@ -8,7 +8,7 @@ class ATM
 
 public:
 
-    // 🔹 Create new account
+   
     void createAccount()
     {
         ofstream fout("accounts.txt", ios::app);
@@ -33,7 +33,7 @@ public:
         cout << "\nAccount Created Successfully!\n";
     }
 
-    // 🔹 Login
+    
     bool login()
     {
         int inputAcc, inputPin;
@@ -67,7 +67,7 @@ public:
         }
     }
 
-    // 🔹 Update file
+    
     void saveAll()
     {
         ifstream fin("accounts.txt");
