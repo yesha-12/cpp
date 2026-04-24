@@ -86,8 +86,10 @@ int main()
     //     cout << "\nFirst two Celsius values are equal\n";
     // else
     //     cout << "\nFirst two Celsius values are NOT equal\n";
-    // return 0;
+   
     cel c1(2),c2(2);
     cout<<c1.fahren1()<<endl;
     cout<<(c1==c2);
+    cout<<"25cs032";
+    return 0;
 }

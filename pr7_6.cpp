@@ -31,6 +31,7 @@ public:
 int main()
 {
     Base* b = new Derived();  
-    delete b;             
+    delete b;   
+    cout<<"25cs032";          
     return 0;
 }

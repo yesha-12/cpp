@@ -51,7 +51,7 @@ class circle:public shape
             c[i].setradius(r);
         }
 
-        cout << "\n--- Circle Data ---\n";
+       
         cout << setw(10) << "Radius"
              << setw(15) << "Area"
              << setw(20) << "perameter" << endl;

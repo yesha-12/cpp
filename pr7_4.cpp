@@ -90,6 +90,7 @@ int main()
         s[i]->area();
         cout<<endl;  
     }
+    cout<<"25cs032";
     return 0;
 
 }
