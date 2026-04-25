@@ -19,6 +19,6 @@ int main() {
     for (auto it = s.begin(); it != s.end(); it++) {
         cout << *it << " ";
     }
-    cout<<"25cs032";
+    cout<<"\n25cs032";
     return 0;
 }

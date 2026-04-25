@@ -85,12 +85,13 @@ int main() {
         addLog("Exception caught: Invalid Amount");
     }
 
-    cout << "\n--- Transaction Logs ---\n";
+    cout << "\nTransaction Logs :\n";
     for (int i = 0; i < logIndex; i++) {
         cout << logs[i] << endl;
     }
 
     cout << "\nFinal Balance: " << acc.getBalance() << endl;
+cout<<"25cs032";
 
-    return 0;
+return 0;
 }

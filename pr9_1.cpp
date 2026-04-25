@@ -24,7 +24,7 @@ int main() {
     for (auto i : v1)
         cout << i << " ";
 
-    cout<<"25cs032";
+    cout<<"\n25cs032";
 
    
 
